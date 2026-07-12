@@ -1,12 +1,12 @@
 # DynamicWebsite
-This is a e-commerce dynamic website created by RECBSITM71 students.
+Simple CRUD (Create, Read, Update, Delete) website application runs completely in JS, CSS, PHP, SQL, and ~~HTML~~.
 
 ## Members
--John Victor Acero
--Andrei Mulato
--Richsander Orduna
--Jeffrey Reyes
--Mark Denniel Urqueza
+ - John Victor Acero
+ - Andrei Mulato
+ - Richsander Orduna
+ - Jeffrey Reyes
+ - Mark Denniel Urqueza
 
 
 ```text
