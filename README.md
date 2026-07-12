@@ -1,7 +1,7 @@
 # DynamicWebsite
 This is a e-commerce dynamic website created by RECBSITM71 students.
 
-Members
+## Members
 -John Victor Acero
 -Andrei Mulato
 -Richsander Orduna
@@ -9,6 +9,7 @@ Members
 -Mark Denniel Urqueza
 
 
+```text
 DynamicWebsite/
 │
 ├── admin/
