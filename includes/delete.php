@@ -6,6 +6,5 @@
     </head>
     <?php
     include('includes/header.html');
-    if
     ?>
 </html>
