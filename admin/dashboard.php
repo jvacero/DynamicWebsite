@@ -72,5 +72,9 @@
             echo $row['age'] . "<br>";
         }
 ?>    
+
+<div>
+    <a href="../admin/login_admin.php">Go Back</a>
+</div>
 </body>
 </html>
