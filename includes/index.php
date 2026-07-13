@@ -1,10 +1,10 @@
 <?php
-    include('includes/header.html')
+    include('../includes/header.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="includes/style.css" type="">
+    <link rel="stylesheet" href="../assets/style.css" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -20,5 +20,5 @@
         
 </body>
 </html>
-<?php include(includes/footer.html)
+<?php include("../includes/footer.php")
 ?>
