@@ -20,7 +20,7 @@
         <button>Log in</button>
     </form>
     <a href="../admin/dashboard.php">go to dashboard</a>
-    <a href="../admin/dbquery_localdb.php">no database yet? click to add database locally</a>
+    <a href="../config/dbquery_localdb.php">no database yet? click to add database locally</a>
 </div>
 <div>
     <span>
