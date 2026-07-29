@@ -53,28 +53,56 @@
 </table>   
 </div>
 
+<div>
+<table id="myTable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            
+            <td><?php ?>Tiger Nixon</td>
+            
+        </tr>
+        
+        <tr>
+            <td>Garrett Winters</td>
+            <td>Accountant</td>
+            <td>Tokyo</td>
+            <td>63</td>
+        </tr>
+    </tbody>
+</table>   
+</div>
+
 <?php
     echo $_POST['email'];
     echo $_POST['password'];
-    $conn = new mysqli("localhost","admin","Pass@123","test");
+    $conn = new mysqli("localhost","root","Password@123","user");
     if ($conn->connect_error){
         die("Connection Failed");
     }
     echo "connected". "<br>";
 
-    $sql = "SELECT * FROM test_user ";
+    $sql = "SELECT * FROM user ";
     $result = $conn->query($sql);
 
     while ($row = $result->fetch_assoc())
         {
             echo $row['id'];
             echo $row['name'];
-            echo $row['age'] . "<br>";
+            echo $row['email'] . "<br>";
         }
 ?>    
 
 <div>
-    <a href="../admin/login_admin.php">Go Back</a>
+    <a href="../admin/admin_login.php">Go Back</a>
 </div>
 </body>
 </html>
