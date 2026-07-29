@@ -34,9 +34,21 @@ if (isset($_POST['SUBMIT'])) {
         $password = mysqli_real_escape_string($conn, trim($_POST['password']));
     }
 
+    if (empty($_POST['username'])) {
+        $errors[] = "Please enter a username.";
+    } else {
+        $password = mysqli_real_escape_string($conn, trim($_POST['username']));
+    }
+
+    if (empty($_POST['admin'])) {
+        $query = "INSERT INTO user(admin) VALUES('false');";
+
+        
+    }
+
     if (empty($errors)) {
 
-        $query = "INSERT INTO admin(name, email, password) VALUES( '$name', '$email', '$password' );";
+        $query = "INSERT INTO user(name, email, password) VALUES( '$name', '$email', '$password' )";
 
         $result = mysqli_query($conn, $query);
 
@@ -58,6 +70,8 @@ if (isset($_POST['SUBMIT'])) {
 }
 
 ?>
+<div>
+    <span>Register</span><br><br>
 
 <form action="admin_registration.php" method="POST">
 
@@ -70,9 +84,12 @@ if (isset($_POST['SUBMIT'])) {
     <label>Password</label><br>
     <input type="password" name="password" required><br><br>
 
+    <label>Username</label><br>
+    <input type="text" name="username" required><br><br>
+
     <input type="submit" name="SUBMIT" value="SUBMIT">
 
 </form>
-
+</div>
 </body>
 </html>
