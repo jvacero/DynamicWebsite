@@ -1,6 +1,4 @@
-<?php
-    include("admin_header.php")
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,25 +11,15 @@
 <div>
     <span>
         Admin Login
-    </span>
+    </span><br><br>
     <form method="POST">
-        <input placeholder="email" type="text" name="email">
-        <input placeholder="password" type="password" name="password">
+        <input placeholder="email" type="text" name="email"><br><br>
+        <input placeholder="password" type="password" name="password"><br><br>
         <button>Log in</button>
     </form>
-    <a href="../admin/dashboard.php">go to dashboard</a>
-    <a href="../config/dbquery_localdb.php">no database yet? click to add database locally</a>
-</div>
-<div>
-    <span>
-        Call administrator to create an admin account for new staff.
-    </span>
 </div>
 
 
 </body>
 </html>
 
-<?php
-    include("admin_footer.php")
-?>
