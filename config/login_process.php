@@ -3,14 +3,14 @@
 require_once "../config/mysqli_connect.php";
 require_once "../config/session.php";
 
-$username = trim($_POST['username']);
-$password = $_POST['password'];
+$email = trim($_POST['email']);
+password_verify($password = $_POST['password']);
 
 $sql = "SELECT * FROM user WHERE email=?";
 
 $stmt = $conn->prepare($sql);
 
-$stmt->bind_param("s", $username);
+$stmt->bind_param("s", $email);
 
 $stmt->execute();
 
@@ -20,7 +20,7 @@ if ($result->num_rows == 1) {
 
     $user = $result->fetch_assoc();
 
-    if (password_verify($password, $admin['password'])) {
+    if (password_verify($password, $user['password'])) {
 
         session_regenerate_id(true);
 
@@ -28,7 +28,7 @@ if ($result->num_rows == 1) {
         $_SESSION['name'] = $user['name'];
         $_SESSION['email'] = $user['email'];
 
-        header("Location: dashboard.php");
+        header("Location: ../index.php");
         exit;
     }
 }

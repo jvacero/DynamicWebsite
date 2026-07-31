@@ -1,78 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- scripts -->
-     
-    <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
-
-<!-- jQuery (Required) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- DataTables JS -->
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>   
-
+    <style>
+        div {
+            width: 100;
+            border-opacity:1;
+            border: black;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
 
-<script>
-    $(document).ready(function () {
-        $('#myTable').DataTable();
-    });
-</script> 
 
-<div>
-<table id="myTable" class="display" style="width:100%">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-        </tr>
-        <tr>
-            <td>Garrett Winters</td>
-            <td>Accountant</td>
-            <td>Tokyo</td>
-            <td>63</td>
-        </tr>
-    </tbody>
-</table>   
-</div>
+    <div>
+        <table>
+            <tr>
+                PICTURE HERE
+            </tr>
+            <th>
+            <p>Item Name<br>$1000</p>
+            </th>
+        </table>
+    </div>
 
-<?php
-    echo $_POST['email'];
-    echo $_POST['password'];
-    $conn = new mysqli("localhost","root","Password@123","test");
-    if ($conn->connect_error){
-        die("Connection Failed");
-    }
-    echo "connected". "<br>";
+    <?php
+        
+        require_once 'config/mysqli_connect.php';
+        while($row = $result->fetch_assoc()){
+    ?>
+            <div class="card">
+                <img src="uploads/<?php echo htmlspecialchars($row['productimage']); ?> picture" alt="Product">
+                <h3><?php echo htmlspecialchars($row['productname']);?></h3>
+                <p> Price:
+                    $<?php echo number_format($row['price'],2);?>
+                </p>
+                <p> Stock
+                    <?php echo $row['stock'];?>
+                </p>
 
-    $sql = "SELECT * FROM test_user ";
-    $result = $conn->query($sql);
+                <?php if(isset($_SESSION['user_id'])){?>
+                    <form action="cart/addtocart.php" method="POST">
+                        <input 
+                        type="hidden" 
+                        name="product_id"
+                        value="<?php echo $row['id']; ?>">
+                        >
+                        <button type="submit">
+                            Add To Cart
+                        </button>
+                    </form>
 
-    while ($row = $result->fetch_assoc())
-        {
-            echo $row['id'];
-            echo $row['name'];
-            echo $row['age'] . "<br>";
-        }
-?>    
+                    <?php } else{ ?>
+                        <a href="admin_login.php">
+                        <button>Login to Buy</button></a>
+                        <?php } ?>
+                }
+            </div>
+        <?php } ?>
+    ?>
 
-<div>
-    <a href="../admin/login_admin.php">Go Back</a>
-</div>
+    <hr>
+    <a href="../admin/dashboard.php" class="button"></a>
+    <form action="admin/dashboard.php"><button type="submit">Admin Dashboard</button></form>
+    <form action="config/dbquery_localdb.php"><button type="submit">Local Database</button></form>
+    <hr>
+
+
+    
+
+
+
+
+
 </body>
 </html>

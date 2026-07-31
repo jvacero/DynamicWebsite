@@ -31,13 +31,14 @@ if (isset($_POST['SUBMIT'])) {
     if (empty($_POST['password'])) {
         $errors[] = "Please enter a password.";
     } else {
-        $password = mysqli_real_escape_string($conn, trim($_POST['password']));
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        
     }
 
     if (empty($_POST['username'])) {
         $errors[] = "Please enter a username.";
     } else {
-        $password = mysqli_real_escape_string($conn, trim($_POST['username']));
+        $username = mysqli_real_escape_string($conn, trim($_POST['username']));
     }
 
     if (empty($_POST['admin'])) {
@@ -48,7 +49,7 @@ if (isset($_POST['SUBMIT'])) {
 
     if (empty($errors)) {
 
-        $query = "INSERT INTO user(name, email, password) VALUES( '$name', '$email', '$password' )";
+        $query = "INSERT INTO user(name, email, password, username) VALUES( '$name', '$email', '$password' , '$username')";
 
         $result = mysqli_query($conn, $query);
 

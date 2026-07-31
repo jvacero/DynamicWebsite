@@ -18,6 +18,10 @@
 </head>
 <body>
 
+<?php
+    include '../config/auth.php';
+?>
+
 
 
 <script>

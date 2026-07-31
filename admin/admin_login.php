@@ -8,6 +8,11 @@
 </head>
 <body>
 
+<?php
+    include 'mysqli_connect.php';
+    include 'config/login_proecess.php';
+?>
+
 <div>
     <span>
         Admin Login

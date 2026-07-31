@@ -12,7 +12,7 @@
 
 $host = "localhost";
 $user = "root";
-$password = "";
+$password = "Password@123";
 $database = "user";
 //$port = "3306";
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS user (
     email VARCHAR(255) UNIQUE,
     username VARCHAR(255),
     password VARCHAR(255),
-    admin BOOLEAN
+    admin BOOLEAN NULL
 )");
 
 $conn->query("
@@ -92,8 +92,8 @@ $requiredColumns = [
         "name" => "VARCHAR(255)",
         "email" => "VARCHAR(255) UNIQUE",
         "username" => "VARCHAR(255)",
-	"password" => "VARCHAR(255)",
-	"admin" => "BOOL"
+	    "password" => "VARCHAR(255)",
+	    "admin" => "BOOL"
 
     ],
 
@@ -106,11 +106,11 @@ $requiredColumns = [
     ],
 
     "cart" => [
-	"id" => "INT AUTO_INCREMENT PRIMARY KEY",
+	    "id" => "INT AUTO_INCREMENT PRIMARY KEY",
         "user_id" =>  "INT NOT NULL",
         "product_id" => "INT NOT NULL",
-    "quantity" => "INT NOT NULL DEFAULT 1",
-    "added_at" => "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+        "quantity" => "INT NOT NULL DEFAULT 1",
+        "added_at" => "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
     ]
 ];
 

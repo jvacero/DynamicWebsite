@@ -5,6 +5,7 @@ body {
 
 .container {
     width: 80%;
+    border: yellow;
     margin: 0 auto;
 }
 
