@@ -1,0 +1,38 @@
+.card {
+    line-height: clamp(.05rem, 2.5vw, 1.5rem);
+    margin: 0;
+    border: 1px solid #0c0c0c;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+body.card-body {
+    padding: 2rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 240px));
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: start;
+    margin: 1rem 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.card-content {
+    display: flex;
+    padding: 1rem;
+}
