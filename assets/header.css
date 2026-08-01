@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.25rem;
     background: #ff7b00;
     color: #000000;
     border: 2px solid #000000;
@@ -20,6 +20,12 @@
     width: 100%;
     display: flex;
     align-items: center;
+}
+
+.fixed-header img {
+    display: block;
+    max-height: 1.2rem;
+    width: auto;
 }
 
 body {
@@ -38,7 +44,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    width: 93%;
+    width: 100%;
 }
 
 .fixed-header nav a {
@@ -68,7 +74,7 @@ body {
 
 .fixed-header .actions button,
 .fixed-header .actions a.button {
-    padding: 0.65rem 1rem;
+    padding: 1rem 1rem;
     border: 2px solid #000000;
     border-radius: 0.35rem;
     background: #ff7b00;
