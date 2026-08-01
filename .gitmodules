@@ -1,0 +1,3 @@
+[submodule "assets/pixel-icon-library"]
+	path = assets/pixel-icon-library
+	url = https://github.com/jvacero/pixel-icon-library.git
