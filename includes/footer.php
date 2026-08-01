@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <link rel="stylesheet" href="../assets/style.css/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-footer
-</body>
-
-</html>
+<footer class="site-footer">
+    <div class="footer-content">
+        <p>&copy; <?php echo date('Y'); ?> DynamicWebsite. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a>
+            <span aria-hidden="true">&middot;</span>
+            <a href="#">Terms of Service</a>
+        </p>
+    </div>
+</footer>
