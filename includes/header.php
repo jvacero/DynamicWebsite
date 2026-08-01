@@ -8,8 +8,13 @@ $userName = $_SESSION['name'] ?? null;
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
     <link rel="stylesheet" href="./assets/header.css" type="text/css" media="screen">
     <link rel="stylesheet" href="./assets/footer.css" type="text/css" media="screen">
+=======
+    <link rel="stylesheet" href="path/to/@hackernoon/pixel-icon-library/fonts/iconfont.css">
+    <link rel="stylesheet" href="./assets/header.css" type="text/css" media="screen">
+>>>>>>> 722ed87 (Tanggal tuldok)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
