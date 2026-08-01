@@ -12,7 +12,7 @@
 
 $host = "localhost";
 $user = "root";
-$password = "Password@123";
+$password = "";
 $database = "user";
 //$port = "3306";
 
@@ -72,10 +72,47 @@ CREATE TABLE IF NOT EXISTS cart (
         ON DELETE CASCADE,
 
     CONSTRAINT fk_cart_product
-        FOREIGN KEY (id)
+        FOREIGN KEY (product_id)
         REFERENCES product(id)
         ON DELETE CASCADE
 
+)ENGINE=InnoDB");
+
+$conn->query("
+CREATE TABLE IF NOT EXISTS order_history (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    order_reference VARCHAR(100) NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    shipping_address VARCHAR(255) NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    delivered_at TIMESTAMP NULL,
+
+    CONSTRAINT fk_order_history_user
+        FOREIGN KEY (user_id)
+        REFERENCES user(id)
+        ON DELETE CASCADE
+)ENGINE=InnoDB");
+
+$conn->query("
+CREATE TABLE IF NOT EXISTS order_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT NOT NULL,
+    product_id INT NOT NULL,
+    quantity INT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    subtotal DECIMAL(10,2) NOT NULL,
+
+    CONSTRAINT fk_order_items_order
+        FOREIGN KEY (order_id)
+        REFERENCES order_history(id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_order_items_product
+        FOREIGN KEY (product_id)
+        REFERENCES product(id)
+        ON DELETE CASCADE
 )ENGINE=InnoDB");
 
 echo "✅ Tables are ready.<br>";
@@ -111,44 +148,28 @@ $requiredColumns = [
         "product_id" => "INT NOT NULL",
         "quantity" => "INT NOT NULL DEFAULT 1",
         "added_at" => "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+    ],
+
+    "order_history" => [
+        "id" => "INT AUTO_INCREMENT PRIMARY KEY",
+        "user_id" => "INT NOT NULL",
+        "order_reference" => "VARCHAR(100) NOT NULL",
+        "total" => "DECIMAL(10,2) NOT NULL",
+        "status" => "VARCHAR(50) NOT NULL",
+        "shipping_address" => "VARCHAR(255) NULL",
+        "created_at" => "TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+        "delivered_at" => "TIMESTAMP NULL"
+    ],
+
+    "order_items" => [
+        "id" => "INT AUTO_INCREMENT PRIMARY KEY",
+        "order_id" => "INT NOT NULL",
+        "product_id" => "INT NOT NULL",
+        "quantity" => "INT NOT NULL",
+        "price" => "DECIMAL(10,2) NOT NULL",
+        "subtotal" => "DECIMAL(10,2) NOT NULL"
     ]
 ];
-
-foreach ($requiredColumns as $table => $columns) {
-
-    foreach ($columns as $column => $definition) {
-
-        $result = $conn->query("
-            SHOW COLUMNS
-            FROM `$table`
-            LIKE '$column'
-        ");
-
-        if ($result->num_rows == 0) {
-
-            if ($column == "id") {
-
-                // Skip id because CREATE TABLE already creates it
-                continue;
-
-            }
-
-            $conn->query("
-                ALTER TABLE `$table`
-                ADD COLUMN `$column` $definition
-            ");
-
-            echo "➕ Added column '$column' to '$table'.<br>";
-
-        } else {
-
-            echo "✅ Column '$column' exists in '$table'.<br>";
-
-        }
-
-    }
-
-}
 
 /* ============================================
    INDEXES
@@ -158,8 +179,7 @@ $indexes = [
 
     "user" => [
 
-        "PRIMARY" => "PRIMARY KEY (`id`)",
-        "email_idx" => "INDEX (`email`)"
+        "PRIMARY" => "PRIMARY KEY (`id`)"
 
     ],
 
@@ -170,6 +190,18 @@ $indexes = [
     ],
 
     "product" => [
+
+        "PRIMARY" => "PRIMARY KEY (`id`)"
+
+    ],
+
+    "order_history" => [
+
+        "PRIMARY" => "PRIMARY KEY (`id`)"
+
+    ],
+
+    "order_items" => [
 
         "PRIMARY" => "PRIMARY KEY (`id`)"
 

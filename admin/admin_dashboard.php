@@ -19,6 +19,7 @@
 <body>
 
 <?php
+    require_once __DIR__ . '/../config/mysqli_connect.php';
     include '../config/auth.php';
 ?>
 
@@ -26,87 +27,50 @@
 
 <script>
     $(document).ready(function () {
-        $('#myTable').DataTable();
+        $('#userTable').DataTable();
     });
-</script> 
+</script>
 
 <div>
-<table id="myTable" class="display" style="width:100%">
+<table id="userTable" class="display" style="width:100%">
     <thead>
         <tr>
             <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Admin</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-        </tr>
-        <tr>
-            <td>Garrett Winters</td>
-            <td>Accountant</td>
-            <td>Tokyo</td>
-            <td>63</td>
-        </tr>
-    </tbody>
-</table>   
-</div>
+        <?php
+        $userSql = "SELECT id, name, email, username, admin FROM user";
+        $userResult = $conn->query($userSql);
 
-<div>
-<table id="myTable" class="display" style="width:100%">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th>Age</th>
-        </tr>
-    </thead>
-    <tbody>
-        
-        <tr>
-            
-            <td><?php ?>Tiger Nixon</td>
-            
-        </tr>
-        
-        <tr>
-            <td>Garrett Winters</td>
-            <td>Accountant</td>
-            <td>Tokyo</td>
-            <td>63</td>
-        </tr>
-    </tbody>
-</table>   
-</div>
-
-<?php
-    echo $_POST['email'];
-    echo $_POST['password'];
-    $conn = new mysqli("localhost","root","Password@123","user");
-    if ($conn->connect_error){
-        die("Connection Failed");
-    }
-    echo "connected". "<br>";
-
-    $sql = "SELECT * FROM user ";
-    $result = $conn->query($sql);
-
-    while ($row = $result->fetch_assoc())
-        {
-            echo $row['id'];
-            echo $row['name'];
-            echo $row['email'] . "<br>";
+        if ($userResult && $userResult->num_rows > 0) {
+            while ($user = $userResult->fetch_assoc()) {
+                ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($user['name']); ?></td>
+                    <td><?php echo htmlspecialchars($user['email']); ?></td>
+                    <td><?php echo htmlspecialchars($user['username']); ?></td>
+                    <td><?php echo $user['admin'] ? 'Yes' : 'No'; ?></td>
+                </tr>
+                <?php
+            }
+        } else {
+            ?>
+            <tr>
+                <td colspan="4">No users found.</td>
+            </tr>
+            <?php
         }
-?>    
+        ?>
+    </tbody>
+</table>   
+</div>
 
 <div>
-    <a href="../admin/admin_login.php">Go Back</a>
+    <a href="../index.php">Go Back</a>
 </div>
 </body>
 </html>

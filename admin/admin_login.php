@@ -9,8 +9,7 @@
 <body>
 
 <?php
-    include 'mysqli_connect.php';
-    include 'config/login_proecess.php';
+    require_once __DIR__ . '/../config/login_process.php';
 ?>
 
 <div>
