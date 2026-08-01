@@ -1,14 +1,25 @@
 /* Header styles */
 .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
     background: #ff7b00;
     color: #000000;
-    border: 1px solid #000000;
-    border-radius: 1.5rem;
-    font-family: 'Lucida Console', sans-serif, shadowed;
+    border: 2px solid #000000;
+    font-family: 'Lucida Console', sans-serif;
+    z-index: 999;
+}
+
+.fixed-header .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 body {
@@ -25,13 +36,22 @@ body {
 
 .fixed-header nav {
     display: flex;
+    align-items: center;
     gap: 1rem;
+    width: 93%;
 }
 
 .fixed-header nav a {
     color: #ffffff;
     text-decoration: none;
     transition: color 0.2s ease;
+}
+
+.fixed-header .actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 0.75rem;
 }
 
 .fixed-header nav a:hover,
@@ -49,9 +69,9 @@ body {
 .fixed-header .actions button,
 .fixed-header .actions a.button {
     padding: 0.65rem 1rem;
-    border: none;
+    border: 2px solid #000000;
     border-radius: 0.35rem;
-    background: #4caf50;
+    background: #ff7b00;
     color: #ffffff;
     cursor: pointer;
     transition: background 0.2s ease;
