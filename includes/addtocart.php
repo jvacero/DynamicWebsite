@@ -204,14 +204,8 @@ if (!empty($_SESSION['cart'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/addtocart.css" type="text/css">
     <title>Your Cart</title>
-    <style>
-        .message { margin: 16px 0; padding: 12px; background: #e8f5e9; border: 1px solid #c8e6c9; }
-        .cart-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
-        .cart-table th, .cart-table td { border: 1px solid #ddd; padding: 8px; }
-        .cart-table th { background: #f4f4f4; }
-        .actions { margin-top: 16px; }
-    </style>
 </head>
 <body>
     <h1>Your Cart</h1>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body >
     <div>
         <span>
             LOGO 1
@@ -14,5 +14,6 @@
             LOGO 2
         </span>
     </div>
+    
 </body>
 </html>

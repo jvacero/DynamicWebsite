@@ -1,0 +1,96 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ffe3ae;
+    color: #222;
+    margin: 0;
+    padding: 2rem;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+.message {
+    margin: 16px 0;
+    padding: 14px 16px;
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 0.35rem;
+    color: #264d26;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffd17d;
+    box-shadow: 0 5px 5px #9e824e;
+    margin-bottom: 16px;
+}
+
+.cart-table th,
+.cart-table td {
+    border: 1px solid #000000;
+    padding: 12px 14px;
+    text-align: left;
+
+}
+
+.cart-table th {
+    background: #ffb52b;
+    font-weight: 700;
+}
+
+.cart-table td {
+    vertical-align: middle;
+}
+
+.actions {
+    margin-top: 16px;
+}
+
+button,
+.actions button {
+    background: #ff7b00;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover,
+.actions button:hover {
+    background: #e46900;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #0056b3;
+}
+
+p {
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .cart-table th,
+    .cart-table td {
+        padding: 10px;
+    }
+
+    .actions {
+        text-align: center;
+    }
+}
