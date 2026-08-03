@@ -21,6 +21,7 @@
         <input placeholder="password" type="password" name="password"><br><br>
         <button>Log in</button>
     </form>
+    <a href="admin_registration.php"><button action="">Register</button></a>
 </div>
 
 
