@@ -8,13 +8,8 @@ $userName = $_SESSION['name'] ?? null;
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
     <link rel="stylesheet" href="./assets/header.css" type="text/css" media="screen">
     <link rel="stylesheet" href="./assets/footer.css" type="text/css" media="screen">
-=======
-    <link rel="stylesheet" href="path/to/@hackernoon/pixel-icon-library/fonts/iconfont.css">
-    <link rel="stylesheet" href="./assets/header.css" type="text/css" media="screen">
->>>>>>> 722ed87 (Tanggal tuldok)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -28,7 +23,7 @@ $userName = $_SESSION['name'] ?? null;
                     <span>Welcome, <?php echo htmlspecialchars($userName); ?></span>
                     <div class="actions">
                         <a class="button cart" href="includes/addtocart.php">
-                            <img src="assets/pixel-icon-library/icons/SVG/regular/cart-add.svg" alt="Cart" width="16" height="16">
+                            <img class="icon" src="assets/pixel-icon-library/icons/SVG/regular/cart-add.svg" alt="Cart" width="16" height="16">
                         </a>
                         <a class="button logout" href="config/logout.php">Logout</a>
                     </div>
