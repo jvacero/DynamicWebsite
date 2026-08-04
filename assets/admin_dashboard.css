@@ -93,23 +93,12 @@ header {
     border: 2px solid #0f172a !important;
     box-shadow: 2px 2px 0 #0f172a;
 }
-
-.open-update-btn,
-.open-delete-btn {
-    padding: 10px 14px;
-    background: #0f766e;
-    color: #f8fafc;
-    border: 3px solid #0f172a;
-    box-shadow: 3px 3px 0 #0f172a;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: 700;
-    text-transform: uppercase;
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 
-.open-update-btn:hover,
-.open-delete-btn:hover {
-    background: #115e59;
-    box-shadow: 2px 2px 0 #0f172a;
-    transform: translate(1px, 1px);
+.logo-container .logo {
+    object-fit: contain;
+    display: block;
 }
