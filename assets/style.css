@@ -1,31 +1,53 @@
-body {
-    padding-bottom: 40px;
-    padding-top: 60px;
+* {
+    box-sizing: border-box;
 }
 
-.container {
-    width: 80%;
-    border: yellow;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: "Courier New", Courier, monospace;
+    background: #ffe3ae;
+    color: #000000;
+}
+
+body {
+    padding-top: 120px;
+    padding-bottom: 110px;
+}
+
+.page-main {
+    width: min(1200px, 95%);
     margin: 0 auto;
 }
 
-.fixed-header,
-.fixed-footer {
+.container {
     width: 100%;
-    position: fixed;
-    background: #333;
-    padding: 10px 0;
-    color: #fff;
+    margin: 0 auto;
 }
 
-.fixed-header {
-    top: 0;
+img {
+    image-rendering: pixelated;
 }
 
-.fixed-footer {
-    bottom: 0;
+button,
+a {
+    font-family: inherit;
 }
 
-nav a {
-    color: #fff
+button,
+.button,
+a.small-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 4px solid #000000;
+    box-shadow: 6px 6px 0 #000000;
+}
+
+button:focus,
+a:focus {
+    outline: 3px dotted #000000;
 }

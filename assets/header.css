@@ -1,104 +1,93 @@
-/* Header styles */
 .fixed-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0.75rem 1.25rem;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
     background: #ff7b00;
     color: #000000;
-    border: 2px solid #000000;
-    font-family: 'Lucida Console', sans-serif;
+    border-bottom: 5px solid #000000;
+    box-shadow: 0 6px 0 #000000;
     z-index: 999;
 }
 
-.fixed-header .container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.fixed-header img {
-    display: block;
-    max-height: 1.2rem;
-    width: auto;
-}
-
-body {
-    background-color: #ffe3ae;
-}
-
-
-.fixed-header .logo {
-    font-size: 1.5rem;
-    font-weight: 100;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
-.fixed-header nav {
+.fixed-header .header-brand,
+.fixed-header .site-nav {
     display: flex;
     align-items: center;
     gap: 1rem;
-    width: 100%;
-
 }
 
-.fixed-header nav a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.2s ease;
-    margin-left: 55rem;
-}
-
-.fixed-header .actions {
+.fixed-header .logo-link {
     display: flex;
     align-items: center;
-    margin-left: 0;
     gap: 0.75rem;
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
-.fixed-header nav a:hover,
-.fixed-header nav a:focus {
-    color: #000000;
-    font-family: 'Lucida Console', sans-serif;
-    stroke: 1px #ffffff;
+.fixed-header .logo-icon {
+    width: 48px;
+    height: 48px;
+    image-rendering: pixelated;
+    border: 4px solid #000000;
+    background: #ffffff;
+    padding: 6px;
+    display: inline-block;
+}
 
+.fixed-header .greeting {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.fixed-header .site-nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .fixed-header .actions {
     display: flex;
-
     gap: 0.75rem;
 }
 
-.fixed-header .actions button,
-.fixed-header .actions a.button {
-    padding: 1rem 1rem;
-    background: #ff7b00;
-    color: #ffffff;
-    cursor: pointer;
-    transition: background 0.2s ease;
+.fixed-header .actions .button,
+.fixed-header .site-nav .button,
+.fixed-header .site-nav a {
+    padding: 0.85rem 1rem;
+    border: 4px solid #000000;
+    background: #ffffff;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    box-shadow: 4px 4px 0 #000000;
+    text-decoration: none;
 }
 
-.fixed-header .actions button:hover,
-.fixed-header .actions a.button:hover {
-    background: #313131;
+.fixed-header .actions .button:hover,
+.fixed-header .site-nav .button:hover,
+.fixed-header .site-nav a:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000000;
+    background: #000000;
+    color: #ffffff;
 }
 
 @media (max-width: 768px) {
     .fixed-header {
-        flex-wrap: wrap;
-        gap: 1rem;
+        flex-direction: column;
+        align-items: stretch;
     }
 
-    .fixed-header nav {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
+    .fixed-header .header-brand,
+    .fixed-header .site-nav {
+        justify-content: space-between;
     }
 }
