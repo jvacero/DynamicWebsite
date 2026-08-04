@@ -36,14 +36,68 @@ foreach ($orders as $order_id => $order) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order History</title>
     <style>
-        .order-card { border: 1px solid #ddd; padding: 16px; margin-bottom: 16px; }
-        .order-card h2 { margin-top: 0; }
-        .order-items { margin: 0; padding-left: 20px; }
-        .section-title { margin-top: 24px; }
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background: #ffe3ae;
+            color: #000000;
+            min-height: 100vh;
+            padding: 120px 1rem 120px;
+        }
+
+        .order-page {
+            max-width: 1080px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 5px solid #000000;
+            box-shadow: 0 6px 0 #000000;
+            padding: 1.5rem;
+        }
+
+        h1 {
+            margin: 0 0 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .order-card {
+            border: 5px solid #000000;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: #fff3cd;
+            box-shadow: 0 6px 0 #000000;
+        }
+
+        .order-card h2 {
+            margin-top: 0;
+        }
+
+        .order-items {
+            margin: 0;
+            padding-left: 1.25rem;
+        }
+
+        .section-title {
+            margin-top: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        a {
+            color: #000000;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <h1>Order History</h1>
+    <main class="order-page">
+        <h1>Order History</h1>
 
     <?php if (!empty($pendingOrders)): ?>
         <h2 class="section-title">Pending Orders</h2>
@@ -92,6 +146,7 @@ foreach ($orders as $order_id => $order) {
         <p>No orders yet.</p>
     <?php endif; ?>
 
-    <p><a href="../index.php">Back to Shop</a></p>
+        <p><a href="../index.php">Back to Shop</a></p>
+    </main>
 </body>
 </html>

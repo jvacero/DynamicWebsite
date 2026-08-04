@@ -208,11 +208,12 @@ if (!empty($_SESSION['cart'])) {
     <title>Your Cart</title>
 </head>
 <body>
-    <h1>Your Cart</h1>
+    <main class="cart-page">
+        <h1>Your Cart</h1>
 
-    <?php if ($message): ?>
-        <div class="message"><?php echo htmlspecialchars($message); ?></div>
-    <?php endif; ?>
+        <?php if ($message): ?>
+            <div class="message"><?php echo htmlspecialchars($message); ?></div>
+        <?php endif; ?>
 
     <?php if (!empty($cartItems)): ?>
         <table class="cart-table">
@@ -257,8 +258,9 @@ if (!empty($_SESSION['cart'])) {
         <p>Your cart is empty.</p>
     <?php endif; ?>
 
-    <p><a href="../index.php">Continue Shopping</a></p>
-    <p><a href="delivered.php">View Order History</a></p>
+        <p><a href="../index.php">Continue Shopping</a></p>
+        <p><a href="delivered.php">View Order History</a></p>
+    </main>
 </body>
 </html>
 

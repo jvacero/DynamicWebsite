@@ -1,38 +1,25 @@
-<?php
+﻿<?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 $userName = $_SESSION['name'] ?? null;
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <link rel="stylesheet" href="./assets/header.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="./assets/footer.css" type="text/css" media="screen">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="fixed-header">
-        <div class="container">
-            <nav>
-                <?php if ($userName): ?>
-                    <span>Welcome, <?php echo htmlspecialchars($userName); ?></span>
-                    <div class="actions">
-                        <a class="button cart" href="includes/addtocart.php">
-                            <img class="icon" src="assets/pixel-icon-library/icons/SVG/regular/cart-add.svg" alt="Cart" width="16" height="16">
-                        </a>
-                        <a class="button logout" href="config/logout.php">Logout</a>
-                    </div>
-                <?php else: ?>
-                    <a href="admin/admin_login.php">Login</a>
-                <?php endif; ?>
-            </nav>
-        </div>
+<header class="fixed-header">
+    <div class="header-brand">
+        <a class="logo-link" href="./index.php">
+            <img class="logo-icon" src="uploads/1785600522_Pixel-Art-Watermelon-6.webp" alt="Pixel Logo">
+            <span>Buraot</span>
+        </a>
     </div>
-</body>
-
-</html>
+    <nav class="site-nav">
+        <?php if ($userName): ?>
+            <span class="greeting">Welcome, <?php echo htmlspecialchars($userName); ?></span>
+            <div class="actions">
+                <a class="button cart" href="includes/addtocart.php">Cart</a>
+                <a class="button logout" href="config/logout.php">Logout</a>
+            </div>
+        <?php else: ?>
+            <a class="button login" href="admin/admin_login.php">Login</a>
+        <?php endif; ?>
+    </nav>
+</header>
