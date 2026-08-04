@@ -139,18 +139,6 @@
 
 ?>
 
-
-
-
-
-
-
-
-<div class="action-buttons">
-    <button type="button" class="open-update-btn" onclick="openAdminUpdateModal()">Update Admin</button>
-    <button type="button" class="open-delete-btn" onclick="openAdminDeleteModal()">Delete User</button>
-</div>
-
 <div id="adminUpdateModal" class="modal-overlay" onclick="closeAdminUpdateModal(event)">
     <div class="modal-window" onclick="event.stopPropagation()">
         <button type="button" class="modal-close" onclick="closeAdminUpdateModal()">×</button>
@@ -161,15 +149,20 @@
 
         <form method="POST" action="">
             <label for="old_email">Current Email</label>
+            <br>
             <input type="email" id="old_email" name="old_email" required>
-
-            <label for="name">New Name</label>
+            <br><br>
+            <label for="name">New Name    </label>
+            <br>
             <input type="text" id="name" name="name">
-
+            <br><br>
             <label for="username">New Username</label>
+            <br>
             <input type="text" id="username" name="username">
-
+            <br>
+            <p>-</p>
             <label class="checkbox-row">
+                <br>
                 <input type="checkbox" name="skip_username">
                 <span>Do not update username</span>
             </label>

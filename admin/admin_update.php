@@ -83,7 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['UPDATE'])) {
     <form action="admin_update.php" method="POST">
         <label for="old_email">Current Email</label>
         <input type="email" id="old_email" name="old_email" required>
-
         <label for="name">New Name</label>
         <input type="text" id="name" name="name">
 
