@@ -10,7 +10,6 @@
 <body class="card-body">
     <?php
 
-    include 'config/dbquery_localdb.php';
 
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
