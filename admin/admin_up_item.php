@@ -87,9 +87,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload_item'])) {
             <input type="file" name="productimage" accept="image/*" required>
 
             <button type="submit" name="upload_item">Upload Item</button>
+
+            <button type="button" class="back-link" onclick="window.location.href='admin_dashboard.php'">Back to Admin Dashboard</button>
         </form>
 
-        <a href="admin_dashboard.php" class="back-link">Back to Admin Dashboard</a>
     </div>
 </body>
 </html>
