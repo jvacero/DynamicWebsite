@@ -8,14 +8,10 @@
     <title>Document</title>
 </head>
 <body class="card-body">
-    <hr>
-    <a href="admin/dashboard.php" class="button"></a>
-    <form action="admin/admin_registration.php"><button type="submit">Admin Registration</button></form>
-    <form action="admin/admin_update.php"><button type="submit">Admin Update</button></form>
-    <form action="admin/admin_dashboard.php"><button type="submit">Admin Dashboard</button></form>
-    <form action="config/dbquery_localdb.php"><button type="submit">Local Database</button></form>
-    <hr>
     <?php
+
+    include 'config/dbquery_localdb.php';
+
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
@@ -56,7 +52,13 @@
         <p>No items available right now.</p>
     <?php endif; ?>
 
-
+    <hr>
+    <a href="admin/dashboard.php" class="button"></a>
+    <form action="admin/admin_registration.php"><button type="submit">Admin Registration</button></form>
+    <form action="admin/admin_update.php"><button type="submit">Admin Update</button></form>
+    <form action="admin/admin_dashboard.php"><button type="submit">Admin Dashboard</button></form>
+    <form action="config/dbquery_localdb.php"><button type="submit">Local Database</button></form>
+    <hr>
     
 
 
