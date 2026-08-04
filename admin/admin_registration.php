@@ -76,9 +76,10 @@ if (isset($_POST['SUBMIT'])) {
         <input type="text" name="username" required>
 
         <input type="submit" name="SUBMIT" value="SUBMIT">
+        <button type="button" class="back-link" onclick="window.location.href='admin_dashboard.php'">Back to dashboard</button>
     </form>
 
-    <a href="admin_dashboard.php" class="back-link">Back to dashboard</a>
+
 </div>
 </body>
 </html>
