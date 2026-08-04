@@ -166,8 +166,10 @@
                 <input type="checkbox" name="skip_username">
                 <span>Do not update username</span>
             </label>
+            <br>
 
             <label for="password">New Password</label>
+            <br>
             <input type="password" id="password" name="password">
 
             <button type="submit" name="UPDATE_ADMIN" value="1" class="submit-btn">Update</button>
