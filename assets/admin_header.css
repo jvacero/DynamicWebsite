@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Courier New", Courier, monospace;
     background-color: #f4f7fb;
 }
 
@@ -8,30 +8,63 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, #2a7b9b, #288fb8);
-    color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: #0f766e;
+    color: #f8fafc;
+    border: 3px solid #0f172a;
+    box-shadow: 6px 6px 0 #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
-.nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-body > div span {
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+.admin-header > span {
     padding: 8px 12px;
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.12);
+    background: #21617a;
+    border: 2px solid #0f172a;
+    box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.2);
+    font-weight: 700;
 }
 
-body > div span:hover {
-    background: rgba(255, 255, 255, 0.22);
-    transition: 0.3s ease;
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a,
+.nav-links button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    background: #2dd4bf;
+    color: #0f172a;
+    text-decoration: none;
+    border: 3px solid #0f172a;
+    box-shadow: 3px 3px 0 #0f172a;
+    font-weight: 700;
+    font-family: inherit;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+    background: #5eead4;
+    box-shadow: 2px 2px 0 #0f172a;
+    transform: translate(1px, 1px);
+}
+
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        width: 100%;
+    }
 }

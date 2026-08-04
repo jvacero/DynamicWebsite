@@ -1,102 +1,141 @@
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Courier New", Courier, monospace;
     background: linear-gradient(135deg, #0f766e, #2dd4bf);
     color: #0f172a;
 }
 
-.update-container {
-    max-width: 460px;
-    margin: 60px auto;
-    padding: 28px;
-    background: #ffffff;
-    border-radius: 14px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+.update-container,
+.delete-page {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 24px;
+    background: #f8fafc;
+    border: 3px solid #0f172a;
+    box-shadow: 6px 6px 0 #0f172a;
 }
 
-.update-container h2 {
+.update-container h2,
+.delete-page h2 {
     margin-top: 0;
     margin-bottom: 16px;
-    color: #0f766e;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 3px solid #0f172a;
+    padding-bottom: 8px;
 }
 
-.update-container form {
+.update-container form,
+.delete-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.update-container label {
-    font-weight: 600;
+.update-container label,
+.delete-form label,
+.modal-window label {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
 
 .update-container input[type="text"],
 .update-container input[type="email"],
-.update-container input[type="password"] {
+.update-container input[type="password"],
+.delete-form input,
+.modal-window input[type="text"],
+.modal-window input[type="email"],
+.modal-window input[type="password"] {
     padding: 10px 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
+    border: 3px solid #0f172a;
+    background: #ffffff;
     outline: none;
+    font-family: inherit;
+    box-shadow: inset 2px 2px 0 rgba(15, 23, 42, 0.12);
 }
 
 .update-container input[type="text"]:focus,
 .update-container input[type="email"]:focus,
-.update-container input[type="password"]:focus {
-    border-color: #0f766e;
+.update-container input[type="password"]:focus,
+.delete-form input:focus,
+.modal-window input[type="text"]:focus,
+.modal-window input[type="email"]:focus,
+.modal-window input[type="password"]:focus {
+    border-color: #21617a;
 }
 
-.checkbox-row {
+.checkbox-row,
+.modal-window .checkbox-row {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-weight: 500;
+    font-weight: 700;
+    background: #e0f2fe;
+    border: 2px solid #0f172a;
+    padding: 8px 10px;
 }
 
-.update-container input[type="submit"] {
+.update-container input[type="submit"],
+.submit-btn,
+.delete-form button,
+.back-link,
+.open-update-btn,
+.open-delete-btn {
     margin-top: 10px;
     padding: 10px 14px;
-    border: none;
-    border-radius: 8px;
+    border: 3px solid #0f172a;
     background: #0f766e;
-    color: #ffffff;
+    color: #f8fafc;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: inherit;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 3px 3px 0 #0f172a;
 }
 
-.update-container input[type="submit"]:hover {
+.update-container input[type="submit"]:hover,
+.submit-btn:hover,
+.delete-form button:hover,
+.back-link:hover,
+.open-update-btn:hover,
+.open-delete-btn:hover {
     background: #115e59;
+    box-shadow: 2px 2px 0 #0f172a;
+    transform: translate(1px, 1px);
 }
 
-.message {
+.message,
+.update-message,
+.delete-message {
     padding: 10px 12px;
-    border-radius: 8px;
     margin-bottom: 12px;
+    border: 2px solid #0f172a;
+    box-shadow: 3px 3px 0 #0f172a;
+    font-weight: 700;
 }
 
-.message.success {
+.message.success,
+.update-message.success,
+.delete-message.success {
     background: #dcfce7;
     color: #166534;
 }
 
-.message.error {
+.message.error,
+.update-message.error,
+.delete-message.error {
     background: #fee2e2;
     color: #991b1b;
-}
-
-.open-update-btn {
-    margin: 20px 24px 0;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 8px;
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: 600;
 }
 
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(15, 23, 42, 0.6);
+    background: rgba(15, 23, 42, 0.7);
     display: none;
     align-items: center;
     justify-content: center;
@@ -109,11 +148,11 @@ body {
 }
 
 .modal-window {
-    width: min(460px, 100%);
-    background: #ffffff;
-    border-radius: 14px;
+    width: min(500px, 100%);
+    background: #f8fafc;
+    border: 3px solid #0f172a;
+    box-shadow: 6px 6px 0 #0f172a;
     padding: 24px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
     position: relative;
 }
 
@@ -121,217 +160,19 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    border: none;
-    background: transparent;
-    font-size: 24px;
+    border: 2px solid #0f172a;
+    background: #ffffff;
+    font-size: 20px;
     cursor: pointer;
+    width: 32px;
+    height: 32px;
+    line-height: 1;
+    box-shadow: 2px 2px 0 #0f172a;
 }
 
-.modal-window form {
+.action-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.modal-window label {
-    font-weight: 600;
-}
-
-.modal-window input[type="text"],
-.modal-window input[type="email"],
-.modal-window input[type="password"] {
-    padding: 10px 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    outline: none;
-}
-
-.modal-window input[type="text"]:focus,
-.modal-window input[type="email"]:focus,
-.modal-window input[type="password"]:focus {
-    border-color: #0f766e;
-}
-
-.modal-window .checkbox-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 500;
-}
-
-.modal-window .submit-btn {
-    margin-top: 10px;
-    padding: 10px 14px;
-    border: none;
-    border-radius: 8px;
-    background: #0f766e;
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.modal-window .submit-btn:hover {
-    background: #115e59;
-}
-
-.update-message {
-    padding: 10px 12px;
-    border-radius: 8px;
-    margin-bottom: 12px;
-}
-
-.update-message.success {
-    background: #dcfce7;
-    color: #166534;
-}
-
-.update-message.error {
-    background: #fee2e2;
-    color: #991b1b;
-}
-
-.modal-window .checkbox-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 500;
-}
-
-.modal-window .submit-btn {
-    margin-top: 10px;
-    padding: 10px 14px;
-    border: none;
-    border-radius: 8px;
-    background: #0f766e;
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.modal-window .submit-btn:hover {
-    background: #115e59;
-}
-
-.update-message {
-    padding: 10px 12px;
-    border-radius: 8px;
-    margin-bottom: 12px;
-}
-
-.update-message.success {
-    background: #dcfce7;
-    color: #166534;
-}
-
-.update-message.error {
-    background: #fee2e2;
-    color: #991b1b;
-}
-
-.open-update-btn {
+    gap: 12px;
+    flex-wrap: wrap;
     margin: 20px 24px 0;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 8px;
-
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.6);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    padding: 20px;
-}
-
-.modal-overlay.active {
-    display: flex;
-}
-
-.modal-window {
-    width: min(460px, 100%);
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 24px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-    position: relative;
-}
-
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border: none;
-    background: transparent;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.modal-window form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.modal-window label {
-    font-weight: 600;
-}
-
-.modal-window input[type="text"],
-.modal-window input[type="email"],
-.modal-window input[type="password"] {
-    padding: 10px 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    outline: none;
-}
-
-.modal-window input[type="text"]:focus,
-.modal-window input[type="email"]:focus,
-.modal-window input[type="password"]:focus {
-    border-color: #0f766e;
-}
-
-.modal-window .checkbox-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 500;
-}
-
-.modal-window .submit-btn {
-    margin-top: 10px;
-    padding: 10px 14px;
-    border: none;
-    border-radius: 8px;
-    background: #0f766e;
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.modal-window .submit-btn:hover {
-    background: #115e59;
-}
-
-.update-message {
-    padding: 10px 12px;
-    border-radius: 8px;
-    margin-bottom: 12px;
-}
-
-.update-message.success {
-    background: #dcfce7;
-    color: #166534;
-}
-
-.update-message.error {
-    background: #fee2e2;
-    color: #991b1b;
 }

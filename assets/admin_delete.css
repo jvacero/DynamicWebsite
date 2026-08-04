@@ -3,35 +3,25 @@ body {
     font-family: "Courier New", Courier, monospace;
     background: linear-gradient(135deg, #0f766e, #2dd4bf);
     color: #0f172a;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
 }
 
 .delete-page {
-    width: min(100%, 460px);
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 24px;
     background: #f8fafc;
-    border: 4px solid #0f766e;
-    box-shadow: 8px 8px 0 #0f172a;
-    padding: 28px;
-    position: relative;
-}
-
-.delete-page::before {
-    content: "";
-    position: absolute;
-    inset: 8px;
-    border: 2px solid #ffffff;
-    pointer-events: none;
+    border: 3px solid #0f172a;
+    box-shadow: 6px 6px 0 #0f172a;
 }
 
 .delete-page h2 {
     margin-top: 0;
-    color: #0f766e;
+    margin-bottom: 16px;
+    color: #0f172a;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.06em;
+    border-bottom: 3px solid #0f172a;
+    padding-bottom: 8px;
 }
 
 .delete-form {
@@ -44,122 +34,71 @@ body {
 .delete-form label {
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    letter-spacing: 0.04em;
 }
 
 .delete-form input {
     padding: 10px 12px;
-    border: 2px solid #21617a;
-    border-radius: 0;
+    border: 3px solid #0f172a;
     background: #ffffff;
-    box-shadow: inset 2px 2px 0 #cbd5e1;
+    outline: none;
     font-family: inherit;
+    box-shadow: inset 2px 2px 0 rgba(15, 23, 42, 0.12);
+}
+
+.delete-form input:focus {
+    border-color: #21617a;
 }
 
 .delete-form button,
-.back-link,
-.open-delete-btn,
-.submit-btn {
+.back-link {
     display: inline-block;
+    margin-top: 10px;
     padding: 10px 14px;
     border: 3px solid #0f172a;
-    background: #21617a;
-    color: #ffffff;
+    background: #0f766e;
+    color: #f8fafc;
     text-decoration: none;
     text-align: center;
     cursor: pointer;
     font-weight: 700;
+    font-family: inherit;
     text-transform: uppercase;
     box-shadow: 3px 3px 0 #0f172a;
 }
 
 .delete-form button:hover,
-.back-link:hover,
-.open-delete-btn:hover,
-.submit-btn:hover {
-    background: #0f766e;
+.back-link:hover {
+    background: #115e59;
+    box-shadow: 2px 2px 0 #0f172a;
+    transform: translate(1px, 1px);
 }
 
 .back-link {
     margin-top: 12px;
 }
 
-.message {
+.message,
+.update-message,
+.delete-message {
     padding: 10px 12px;
     margin-bottom: 12px;
     border: 2px solid #0f172a;
+    box-shadow: 3px 3px 0 #0f172a;
     font-weight: 700;
 }
 
-.message.success {
+.message.success,
+.update-message.success,
+.delete-message.success {
     background: #dcfce7;
     color: #166534;
 }
 
-.message.error {
+.message.error,
+.update-message.error,
+.delete-message.error {
     background: #fee2e2;
     color: #991b1b;
-}
-
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.72);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    padding: 20px;
-}
-
-.modal-overlay.active {
-    display: flex;
-}
-
-.modal-window {
-    width: min(460px, 100%);
-    background: #f8fafc;
-    border: 4px solid #0f766e;
-    box-shadow: 8px 8px 0 #0f172a;
-    padding: 24px;
-    position: relative;
-}
-
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border: 2px solid #0f172a;
-    background: #21617a;
-    color: #ffffff;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.modal-window form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.modal-window label {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-}
-
-.modal-window input {
-    padding: 10px 12px;
-    border: 2px solid #21617a;
-    border-radius: 0;
-    background: #ffffff;
-    font-family: inherit;
-    box-shadow: inset 2px 2px 0 #cbd5e1;
-}
-
-.open-delete-btn {
-    margin: 20px 24px 0;
 }
 

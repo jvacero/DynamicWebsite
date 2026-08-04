@@ -59,34 +59,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload_item'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Product</title>
+    <link rel="stylesheet" type="text/css" href="../assets/admin_update.css">
 </head>
 <body>
-    <h2>Upload Product</h2>
+    <div class="update-container">
+        <h2>Upload Product</h2>
 
-    <?php if ($message !== ''): ?>
-        <p style="color: green;"><?php echo htmlspecialchars($message); ?></p>
-    <?php endif; ?>
+        <?php if ($message !== ''): ?>
+            <p class="message success"><?php echo htmlspecialchars($message); ?></p>
+        <?php endif; ?>
 
-    <?php if ($errorMessage !== ''): ?>
-        <p style="color: red;"><?php echo htmlspecialchars($errorMessage); ?></p>
-    <?php endif; ?>
+        <?php if ($errorMessage !== ''): ?>
+            <p class="message error"><?php echo htmlspecialchars($errorMessage); ?></p>
+        <?php endif; ?>
 
-    <form action="admin_up_item.php" method="POST" enctype="multipart/form-data">
-        <label>Product Name</label><br>
-        <input type="text" name="productname" required><br><br>
+        <form action="admin_up_item.php" method="POST" enctype="multipart/form-data">
+            <label>Product Name</label>
+            <input type="text" name="productname" required>
 
-        <label>Price</label><br>
-        <input type="number" step="0.01" name="price" required><br><br>
+            <label>Price</label>
+            <input type="number" step="0.01" name="price" required>
 
-        <label>Stock</label><br>
-        <input type="number" name="stock" required><br><br>
+            <label>Stock</label>
+            <input type="number" name="stock" required>
 
-        <label>Product Image</label><br>
-        <input type="file" name="productimage" accept="image/*" required><br><br>
+            <label>Product Image</label>
+            <input type="file" name="productimage" accept="image/*" required>
 
-        <button type="submit" name="upload_item">Upload Item</button>
-    </form>
+            <button type="submit" name="upload_item">Upload Item</button>
+        </form>
 
-    <p><a href="admin_dashboard.php">Back to Admin Dashboard</a></p>
+        <a href="admin_dashboard.php" class="back-link">Back to Admin Dashboard</a>
+    </div>
 </body>
 </html>

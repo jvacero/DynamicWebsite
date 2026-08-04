@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../assets/admin_dashboard.css" type="text/css" media="screen">
     <link rel="stylesheet" href="../assets/admin_footer.css" type="text/css" media="screen">
     <link rel="stylesheet" href="../assets/admin_update.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../assets/admin_delete.css" type="text/css" media="screen">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
 
 <!-- jQuery (Required) -->
@@ -144,6 +145,7 @@
 
 
 
+
 <div class="action-buttons">
     <button type="button" class="open-update-btn" onclick="openAdminUpdateModal()">Update Admin</button>
     <button type="button" class="open-delete-btn" onclick="openAdminDeleteModal()">Delete User</button>
@@ -151,6 +153,7 @@
 
 <div id="adminUpdateModal" class="modal-overlay" onclick="closeAdminUpdateModal(event)">
     <div class="modal-window" onclick="event.stopPropagation()">
+        <button type="button" class="modal-close" onclick="closeAdminUpdateModal()">×</button>
 
         <?php if ($updateMessage !== ''): ?>
             <p class="update-message <?php echo htmlspecialchars($updateStatus); ?>"><?php echo $updateMessage; ?></p>
@@ -324,6 +327,17 @@ function closeAdminUpdateModal(event) {
         return;
     }
     document.getElementById('adminUpdateModal').classList.remove('active');
+}
+
+function openAdminDeleteModal() {
+    document.getElementById('adminDeleteModal').classList.add('active');
+}
+
+function closeAdminDeleteModal(event) {
+    if (event && event.target.id !== 'adminDeleteModal') {
+        return;
+    }
+    document.getElementById('adminDeleteModal').classList.remove('active');
 }
 
 $(document).ready(function () {

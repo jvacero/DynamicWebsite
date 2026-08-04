@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Update Admin</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Register Admin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/admin_update.css">
 </head>
 <body>
 
@@ -10,29 +12,26 @@
 
 if (isset($_POST['SUBMIT'])) {
 
-    require('../config/mysqli_connect.php');
+    require_once __DIR__ . '/../config/mysqli_connect.php';
 
     $errors = array();
 
-    // New name
     if (empty($_POST['name'])) {
         $errors[] = "Please enter a name";
-     
     } else {
         $name = mysqli_real_escape_string($conn, trim($_POST['name']));
     }
-    //email
+
     if (empty($_POST['email'])) {
         $errors[] = "Please enter email.";
     } else {
         $email = mysqli_real_escape_string($conn, trim($_POST['email']));
     }
-    // New password
+
     if (empty($_POST['password'])) {
         $errors[] = "Please enter a password.";
     } else {
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        
     }
 
     if (empty($_POST['username'])) {
@@ -41,56 +40,45 @@ if (isset($_POST['SUBMIT'])) {
         $username = mysqli_real_escape_string($conn, trim($_POST['username']));
     }
 
-    if (empty($_POST['admin'])) {
-        $query = "INSERT INTO user(admin) VALUES('false');";
-
-        
-    }
-
     if (empty($errors)) {
-
         $query = "INSERT INTO user(name, email, password, username) VALUES( '$name', '$email', '$password' , '$username')";
-
         $result = mysqli_query($conn, $query);
 
         if (mysqli_affected_rows($conn) == 1) {
-            echo "<p style='color:green;'>Admin updated successfully!</p>";
+            echo "<p class='message success'>Admin updated successfully!</p>";
         } else {
-            echo "<p style='color:red;'>No matching admin found or no changes made.</p>";
+            echo "<p class='message error'>No matching admin found or no changes made.</p>";
         }
-
     } else {
-
         foreach ($errors as $msg) {
-            echo "<p style='color:red;'>$msg</p>";
+            echo "<p class='message error'>$msg</p>";
         }
-
     }
 
     mysqli_close($conn);
 }
 
 ?>
-<div>
-    <span>Register</span><br><br>
+<div class="update-container">
+    <h2>Register Admin</h2>
 
-<form action="admin_registration.php" method="POST">
+    <form action="admin_registration.php" method="POST">
+        <label>Email</label>
+        <input type="email" name="email" required>
 
-    <label>Email</label><br>
-    <input type="email" name="email" required><br><br>
+        <label>Name</label>
+        <input type="text" name="name" required>
 
-    <label>Name</label><br>
-    <input type="text" name="name" required ><br><br>
+        <label>Password</label>
+        <input type="password" name="password" required>
 
-    <label>Password</label><br>
-    <input type="password" name="password" required><br><br>
+        <label>Username</label>
+        <input type="text" name="username" required>
 
-    <label>Username</label><br>
-    <input type="text" name="username" required><br><br>
+        <input type="submit" name="SUBMIT" value="SUBMIT">
+    </form>
 
-    <input type="submit" name="SUBMIT" value="SUBMIT">
-
-</form>
+    <a href="admin_dashboard.php" class="back-link">Back to dashboard</a>
 </div>
 </body>
 </html>

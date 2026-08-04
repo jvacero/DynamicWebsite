@@ -12,13 +12,10 @@
             LOGO 1
         </span>
             <span class="nav-links">
-                <a href="../index.php">Home</a>
-                <a> | </a>
-                <a href="admin_delete.php">Delete</a>
-                <a> | </a>
-                <a type="button" class="open-update-btn" onclick="openAdminUpdateModal()">Update Admin</button>
-                <a> | </a>
-                <a href="admin_up_item.php">Upload Item</a>
+               <a href="../index.php">Home</a>
+               <a href="admin_delete.php">Delete</a>
+               <button type="button" class="nav-btn" onclick="if (typeof openAdminUpdateModal === 'function') { openAdminUpdateModal(); }">Update Admin</button>
+               <a href="admin_up_item.php">Upload Item</a>
             </span>
         <span>
             LOGO 2
