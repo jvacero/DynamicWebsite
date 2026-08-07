@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../assets/admin_footer.css" type="text/css" media="screen">
     <link rel="stylesheet" href="../assets/admin_update.css" type="text/css" media="screen">
     <link rel="stylesheet" href="../assets/admin_delete.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="../assets/admin_header.css" type="text/css" media="screen">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
 
 <!-- jQuery (Required) -->

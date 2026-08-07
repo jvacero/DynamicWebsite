@@ -19,6 +19,10 @@ $userName = $_SESSION['name'] ?? null;
                 <a class="button logout" href="config/logout.php">Logout</a>
             </div>
         <?php else: ?>
+            <!-- Example Trigger Button -->
+<button type="button" class="button action-button" onclick="openAdminLoginModal()">
+    Login
+</button>
             <a class="button login" href="admin/admin_login.php">Login</a>
         <?php endif; ?>
     </nav>

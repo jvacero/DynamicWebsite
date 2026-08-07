@@ -1,7 +1,13 @@
+/* ==========================================================================
+   Admin Navigation & Header Controls - Pixel Art Theme
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
     margin: 0;
-    font-family: "Courier New", Courier, monospace;
-    background-color: #f4f7fb;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    background-color: #2a2a3e;
 }
 
 .admin-header {
@@ -10,21 +16,20 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1rem 1.5rem;
-    background: #0f766e;
-    color: #f8fafc;
-    border: 3px solid #0f172a;
-    box-shadow: 6px 6px 0 #0f172a;
+    background: #ff7b00;
+    color: #000000;
+    border: 5px solid #000000;
+    box-shadow: 0 6px 0 #000000;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
 }
-
 
 .admin-header > span {
     padding: 8px 12px;
-    background: #21617a;
-    border: 2px solid #0f172a;
-    box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.2);
-    font-weight: 700;
+    background: #ffcc00;
+    border: 3px solid #000000;
+    box-shadow: 3px 3px 0 #000000;
+    font-size: 0.7rem;
+    color: #000000;
 }
 
 .nav-links {
@@ -40,23 +45,28 @@ body {
     align-items: center;
     justify-content: center;
     padding: 8px 12px;
-    background: #2dd4bf;
-    color: #0f172a;
+    background: #00b0ff;
+    color: #000000;
     text-decoration: none;
-    border: 3px solid #0f172a;
-    box-shadow: 3px 3px 0 #0f172a;
-    font-weight: 700;
-    font-family: inherit;
-    font-size: 0.9rem;
+    border: 3px solid #000000;
+    box-shadow: 3px 3px 0 #000000;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.65rem;
     text-transform: uppercase;
     cursor: pointer;
+    transition: none;
 }
 
 .nav-links a:hover,
 .nav-links button:hover {
-    background: #5eead4;
-    box-shadow: 2px 2px 0 #0f172a;
-    transform: translate(1px, 1px);
+    background: #00e676;
+    color: #000000;
+}
+
+.nav-links a:active,
+.nav-links button:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0 #000000;
 }
 
 @media (max-width: 768px) {

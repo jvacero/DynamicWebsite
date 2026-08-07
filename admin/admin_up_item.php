@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../config/mysqli_connect.php';
 require_once __DIR__ . '/../config/auth.php';
+enforce_admin_access($conn);
 
 $uploadDirectory = __DIR__ . '/../uploads';
 if (!is_dir($uploadDirectory)) {

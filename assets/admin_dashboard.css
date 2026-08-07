@@ -1,12 +1,27 @@
+/* ==========================================================================
+   Admin Dashboard & Tables - Pixel Art / Arcade Theme
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
     box-sizing: border-box;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
 }
 
 body {
     margin: 0;
-    font-family: "Courier New", Courier, monospace;
-    background: linear-gradient(135deg, #0f766e, #2dd4bf);
-    color: #0f172a;
+    background-color: #2a2a3e;
+    background-image: 
+        linear-gradient(45deg, #1e1e2c 25%, transparent 25%), 
+        linear-gradient(-45deg, #1e1e2c 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #1e1e2c 75%), 
+        linear-gradient(-45deg, transparent 75%, #1e1e2c 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    color: #000000;
 }
 
 header {
@@ -21,16 +36,18 @@ header {
 
 .container h1,
 .container h2 {
-    color: #0f172a;
-    margin-bottom: 0.5rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    text-shadow: 3px 3px 0 #000000;
 }
 
 .section-card {
-    background: #f8fafc;
-    border: 3px solid #0f172a;
-    box-shadow: 6px 6px 0 #0f172a;
+    background: #ffffff;
+    border: 5px solid #000000;
+    box-shadow: 6px 6px 0 #000000;
     padding: 20px;
     margin-bottom: 24px;
 }
@@ -38,61 +55,68 @@ header {
 #userTable,
 #activityTable {
     width: 100% !important;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     background-color: #ffffff;
-    border: 2px solid #0f172a;
+    border: 4px solid #000000;
     overflow: hidden;
+    margin-top: 1rem;
 }
 
 #userTable thead th,
 #activityTable thead th {
-    background-color: #21617a;
-    color: #f8fafc;
+    background-color: #ffcc00;
+    color: #000000;
     padding: 12px 14px;
     text-align: left;
-    font-weight: 700;
-    border: 2px solid #0f172a;
+    font-size: 0.65rem;
+    border: 3px solid #000000;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
 }
 
 #userTable tbody td,
 #activityTable tbody td {
-    padding: 12px 14px;
-    border: 2px solid #0f172a;
+    padding: 10px 12px;
+    border: 2px solid #000000;
+    font-size: 0.65rem;
+    line-height: 1.4;
 }
 
 #userTable tbody tr:nth-child(even),
 #activityTable tbody tr:nth-child(even) {
-    background-color: #e0f2fe;
+    background-color: #fff3cd;
 }
 
 #userTable tbody tr:hover,
 #activityTable tbody tr:hover {
-    background-color: #bfdbfe;
-    transition: background-color 0.2s ease;
+    background-color: #00b0ff;
+    color: #ffffff;
 }
 
 .dataTables_wrapper .dataTables_filter input {
-    border: 3px solid #0f172a;
+    border: 4px solid #000000;
     padding: 8px 10px;
     outline: none;
-    background: #ffffff;
+    background: #fff3cd;
     font-family: inherit;
-    box-shadow: 3px 3px 0 #0f172a;
+    font-size: 0.65rem;
+    box-shadow: inset 2px 2px 0 #d4b100;
 }
 
 .dataTables_wrapper .dataTables_filter input:focus {
-    border-color: #21617a;
+    background: #ffffff;
+    box-shadow: inset 2px 2px 0 #000000;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-    background: #21617a !important;
-    color: #ffffff !important;
-    border: 2px solid #0f172a !important;
-    box-shadow: 2px 2px 0 #0f172a;
+    background: #ff7b00 !important;
+    color: #000000 !important;
+    border: 3px solid #000000 !important;
+    box-shadow: 3px 3px 0 #000000;
+    font-size: 0.65rem;
 }
+
 .logo-container {
     display: flex;
     align-items: center;
