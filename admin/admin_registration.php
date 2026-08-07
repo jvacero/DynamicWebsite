@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Register Admin</title>
+    <title>Register</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../assets/admin_update.css">
@@ -45,9 +45,9 @@ if (isset($_POST['SUBMIT'])) {
         $result = mysqli_query($conn, $query);
 
         if (mysqli_affected_rows($conn) == 1) {
-            echo "<p class='message success'>Admin updated successfully!</p>";
+            echo "<p class='message success'>Registered successfully!</p>";
         } else {
-            echo "<p class='message error'>No matching admin found or no changes made.</p>";
+            echo "<p class='message error'>No matching user found or no changes made.</p>";
         }
     } else {
         foreach ($errors as $msg) {
@@ -60,7 +60,7 @@ if (isset($_POST['SUBMIT'])) {
 
 ?>
 <div class="update-container">
-    <h2>Register Admin</h2>
+    <h2>Admin</h2>
 
     <form action="admin_registration.php" method="POST">
         <label>Email</label>

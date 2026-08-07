@@ -13,9 +13,9 @@
         </span>     
             <span class="nav-links">
                <a href="../index.php">Home</a>
-               <a href="admin_delete.php">Delete</a>
-               <button type="button" class="nav-btn" onclick="if (typeof openAdminUpdateModal === 'function') { openAdminUpdateModal(); }">Update Admin</button>
-               <a href="admin_up_item.php">Upload Item</a>
+               <button type="button" class="nav-btn" onclick="if (typeof openAdminDeleteModal === 'function') { openAdminDeleteModal(); }">Delete</button>
+               <button type="button" class="nav-btn" onclick="if (typeof openAdminUpdateModal === 'function') { openAdminUpdateModal(); }">Update</button>
+               <button type="button" class="nav-btn" onclick="if (typeof openAdminUploadModal ==='function') { openAdminUploadModal(); }">Upload</button>
             </span>
         <span>
             Buraot System Admin

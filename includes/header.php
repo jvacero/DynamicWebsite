@@ -7,7 +7,7 @@ $userName = $_SESSION['name'] ?? null;
 <header class="fixed-header">
     <div class="header-brand">
         <a class="logo-link" href="./index.php">
-            <img class="logo-icon" src="uploads/1785600522_Pixel-Art-Watermelon-6.webp" alt="Pixel Logo">
+            <img class="logo-icon" src="uploads\ChatGPT Image Aug 5, 2026, 12_33_18 AM.png" alt="Pixel Logo">
             <span>Buraot</span>
         </a>
     </div>

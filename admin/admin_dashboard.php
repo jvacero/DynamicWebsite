@@ -37,6 +37,9 @@
 
     $updateMessage = '';
     $updateStatus = '';
+    $deleteMessage = '';
+    $deleteStatus = '';
+    $uploadMessage = '';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['UPDATE_ADMIN'])) {
         $errors = [];
@@ -187,12 +190,42 @@
 
         <form method="POST" action="">
             <label for="delete_email">Email</label>
+            <br>
             <input type="email" id="delete_email" name="delete_email">
-
+            <br><br>
             <label for="delete_username">Username</label>
+            <br>
             <input type="text" id="delete_username" name="delete_username">
-
+            
             <button type="submit" name="DELETE_ADMIN" value="1" class="submit-btn">Delete</button>
+        </form>
+    </div>
+</div>
+
+<div id="adminUploadModal" class="modal-overlay" onclick="closeAdminUploadModal(event)">
+    <div class="modal-window" onclick="event.stopPropagation()">
+        <button type="button" class="modal-close" onclick="closeAdminUploadModal()">×</button>
+
+        <?php if ($uploadMessage !== ''): ?>
+            <p class="upload-message <?php echo htmlspecialchars($deleteStatus); ?>"><?php echo $uploadMessage; ?></p>
+        <?php endif; ?>
+
+        <form action="admin_up_item.php" method="POST" enctype="multipart/form-data">
+            <label>Product Name</label><br>
+            <input type="text" name="productname" required><br><br>
+
+            <label>Price</label><br>
+            <input type="number" step="0.01" name="price" required><br><br>
+
+            <label>Stock</label><br>
+            <input type="number" name="stock" required><br><br>
+
+            <label>Product Image</label><br>
+            <input type="file" name="productimage" accept="image/*" required><br><br>
+
+            <button type="submit" name="upload_item" class="submit-btn">
+                Upload Item
+            </button>
         </form>
     </div>
 </div>
@@ -313,6 +346,18 @@
 </div>
 
 <script>
+function openAdminUploadModal() {
+    document.getElementById('adminUploadModal').classList.add('active');
+}
+
+function closeAdminUploadModal(event) {
+    if (event && event.target.id !== 'adminUploadModal') {
+        return;
+    }
+
+    document.getElementById('adminUploadModal').classList.remove('active');
+}
+
 function openAdminUpdateModal() {
     document.getElementById('adminUpdateModal').classList.add('active');
 }

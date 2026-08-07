@@ -7,7 +7,7 @@ body {
 }
 
 .update-container,
-.delete-page {
+.delete-page, .modal-window {
     width: min(520px, 100%);
     max-width: 520px;
     margin: 6rem auto 3rem;
@@ -18,7 +18,9 @@ body {
 }
 
 .update-container h2,
-.delete-page h2 {
+.delete-page h2 ,
+.modal-window h2
+{
     margin: 0 0 16px;
     color: #0f172a;
     text-transform: uppercase;
@@ -28,7 +30,9 @@ body {
 }
 
 .update-container form,
-.delete-form {
+.delete-form,
+.modal-window
+{
     display: grid;
     gap: 12px;
     align-items: stretch;
@@ -116,7 +120,8 @@ body {
 
 .message,
 .update-message,
-.delete-message {
+.delete-message,
+.upload-message {
     padding: 12px 14px;
     margin-bottom: 12px;
     border: 4px solid #0f172a;
