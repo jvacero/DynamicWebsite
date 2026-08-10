@@ -59,7 +59,7 @@ Directory structure:
     │   └── index.php
     └── uploads/
  ```
-    </details>
+</details>
 
 # DynamicWebsite System (Pixel Market / Buraot System)
 
