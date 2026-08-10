@@ -245,7 +245,7 @@ $developers = [
                     </div>
                 </div>
             <?php endforeach; ?>
-        </div> 
+        </div>
     </main>
 
 </body>
