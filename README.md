@@ -1,5 +1,5 @@
 # DynamicWebsite
-Web Application with integrated-CRUD (Create, Read, Update, Delete) operation runs completely in JS, CSS, PHP, SQL, and ~~HTML~~.
+Web Application with integrated-CRUD (Create, Read, Update, Delete) operation runs completely in JS, CSS, PHP, SQL, and HTML.
 
 ![alt text](https://github.com/jvacero/DynamicWebsite/blob/main/assets/images/homepage.png)
 
@@ -9,6 +9,44 @@ Web Application with integrated-CRUD (Create, Read, Update, Delete) operation ru
  - Richsander Orduna
  - Jeffrey Reyes
  - Mark Denniel Urqueza
+
+---
+
+# DynamicWebsite System (Buraot System)
+
+A PHP and MySQL-based e-commerce platform built with an integrated administration portal and an 8-bit retro gaming aesthetic.
+
+---
+
+## 1. Project Overview
+
+### Technical Architecture
+The system employs a PHP backend connected to a MySQL relational database. The schema utilizes cascade constraints (`ON DELETE CASCADE`) across user, session, cart, and order tables to maintain relational integrity.
+
+```text
+┌─────────────────────────────────────────────────────────┐
+│                    User Browser                         │
+└───────────┬─────────────────────────────────┬───────────┘
+            │                                 │
+            ▼                                 ▼
+┌───────────────────────┐         ┌───────────────────────┐
+│    Customer Front     │         │   Admin Portal        │
+│  (index, cart, etc.)  │         │  (admin_dashboard)    │
+└───────────┬───────────┘         └───────────┬───────────┘
+            │                                 │
+            ▼                                 ▼
+┌─────────────────────────────────────────────────────────┐
+│                   PHP Backend API                       │
+│      - Auth Enforcement (auth.php)                      │
+│      - MySQLi Interface (mysqli_connect.php)            │
+└───────────┬─────────────────────────────────────────────┘
+            │
+            ▼
+┌─────────────────────────────────────────────────────────┐
+│                   MySQL Database                        │
+│   (user, product, cart, order_history, order_items)     │
+└─────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -64,44 +102,6 @@ Directory structure:
     └── uploads/
  ```
 </details>
-
----
-
-# DynamicWebsite System (Pixel Market / Buraot System)
-
-A PHP and MySQL-based e-commerce platform built with an integrated administration portal and an 8-bit retro gaming aesthetic.
-
----
-
-## 1. Project Overview
-
-### Technical Architecture
-The system employs a PHP backend connected to a MySQL relational database. The schema utilizes cascade constraints (`ON DELETE CASCADE`) across user, session, cart, and order tables to maintain relational integrity.
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                    User Browser                         │
-└───────────┬─────────────────────────────────┬───────────┘
-            │                                 │
-            ▼                                 ▼
-┌───────────────────────┐         ┌───────────────────────┐
-│    Customer Front     │         │   Admin Portal        │
-│  (index, cart, etc.)  │         │  (admin_dashboard)    │
-└───────────┬───────────┘         └───────────┬───────────┘
-            │                                 │
-            ▼                                 ▼
-┌─────────────────────────────────────────────────────────┐
-│                   PHP Backend API                       │
-│      - Auth Enforcement (auth.php)                      │
-│      - MySQLi Interface (mysqli_connect.php)            │
-└───────────┬─────────────────────────────────────────────┘
-            │
-            ▼
-┌─────────────────────────────────────────────────────────┐
-│                   MySQL Database                        │
-│   (user, product, cart, order_history, order_items)     │
-└─────────────────────────────────────────────────────────┘
-```
 
 ---
 
