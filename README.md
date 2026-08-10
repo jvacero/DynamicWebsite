@@ -9,7 +9,8 @@ Simple CRUD (Create, Read, Update, Delete) website application runs completely i
  - Mark Denniel Urqueza
 
 <details>
- <summary>File Directories </summary>
+ <summary>View Project Directories</summary>
+ 
 ```text
 Directory structure:
 └── jvacero-dynamicwebsite/
@@ -56,7 +57,8 @@ Directory structure:
     │   ├── footer.php
     │   ├── header.php
     │   └── index.php
-    └── uploads/ ```
+    └── uploads/
+ ```
     </details>
 
 # DynamicWebsite System (Pixel Market / Buraot System)
