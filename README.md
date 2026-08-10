@@ -1,5 +1,5 @@
 # DynamicWebsite
-Simple CRUD (Create, Read, Update, Delete) website application runs completely in JS, CSS, PHP, SQL, and ~~HTML~~.
+Web Application with integrated-CRUD (Create, Read, Update, Delete) operation runs completely in JS, CSS, PHP, SQL, and ~~HTML~~.
 
 ## Members
  - John Victor Acero
@@ -7,6 +7,8 @@ Simple CRUD (Create, Read, Update, Delete) website application runs completely i
  - Richsander Orduna
  - Jeffrey Reyes
  - Mark Denniel Urqueza
+
+---
 
 <details>
  <summary>View Project Directories</summary>
@@ -60,6 +62,8 @@ Directory structure:
     └── uploads/
  ```
 </details>
+
+---
 
 # DynamicWebsite System (Pixel Market / Buraot System)
 
