@@ -1,7 +1,7 @@
 # DynamicWebsite
 Web Application with integrated-CRUD (Create, Read, Update, Delete) operation runs completely in JS, CSS, PHP, SQL, and ~~HTML~~.
 
-![alt text](https://github.com/jvacero/Cryptic/blob/Cryptic_Legacy/assets/images/homepage.png)
+![alt text](https://github.com/jvacero/DynamicWebsite/blob/main/assets/images/homepage.png)
 
 ## Members
  - John Victor Acero
