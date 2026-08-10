@@ -5,25 +5,31 @@ require_once __DIR__ . '/../config/mysqli_connect.php';
 // Developers documentation dataset
 $developers = [
     [
-        'name' => 'John Victor Gacero',
-        'role' => 'Lead Systems Architect',
-        'avatar' => 'https://via.placeholder.com/150/00b0ff/ffffff?text=DEV+1',
+        'name' => 'John Victor Acero',
+        'role' => 'Lead Systems Architect & Lead Backend Engineer',
+        'avatar' => '../devsphotos/1000010946.png',
         'doc' => 'Designed overall system architecture, user session management, and integrated the core PHP & MySQL database connection layer.'
     ],
     [
-        'name' => 'Developer Two',
+        'name' => 'Mark Denniel Urqueza',
         'role' => 'Backend Engineer',
-        'avatar' => 'https://via.placeholder.com/150/ff7b00/ffffff?text=DEV+2',
+        'avatar' => '../devsphotos/1000010943.png',
         'doc' => 'Engineered cart-to-order processing, automated order delivery expiration logic, and MySQL cascade database constraints.'
     ],
     [
-        'name' => 'Developer Three',
+        'name' => 'Richsander Orduña',
         'role' => 'UI / UX Designer',
-        'avatar' => 'https://via.placeholder.com/150/00e676/ffffff?text=DEV+3',
+        'avatar' => '../devsphotos/1000010945.png',
         'doc' => 'Crafted the custom 8-bit retro arcade design language, pixel typography, responsive card containers, and DataTables styling.'
     ],
     [
-        'name' => 'Developer Four',
+        'name' => 'Andrei Mulato',
+        'role' => 'UI / UX Designer',
+        'avatar' => '../devsphotos/1000010942.png',
+        'doc' => 'Crafted the custom 8-bit retro arcade design language, pixel typography, responsive card containers, and DataTables styling.'
+    ],
+    [
+        'name' => 'Jeffrey Reyes',
         'role' => 'QA & Security Engineer',
         'avatar' => 'https://via.placeholder.com/150/ffcc00/ffffff?text=DEV+4',
         'doc' => 'Implemented input sanitization (XSS prevention), activity tracking logging, and cross-browser testing for retro components.'
