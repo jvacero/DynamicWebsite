@@ -56,7 +56,7 @@ Directory structure:
     │   ├── footer.php
     │   ├── header.php
     │   └── index.php
-    └── uploads/
+    └── uploads/ ```
     </details>
 
 # DynamicWebsite System (Pixel Market / Buraot System)
