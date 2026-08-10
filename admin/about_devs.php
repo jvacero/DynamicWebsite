@@ -30,8 +30,8 @@ $developers = [
     ],
     [
         'name' => 'Jeffrey Reyes',
-        'role' => 'QA & Security Engineer',
-        'avatar' => 'https://via.placeholder.com/150/ffcc00/ffffff?text=DEV+4',
+        'role' => 'Wanted: nag-tour',
+        'avatar' => '../devsphotos/1000010944.png',
         'doc' => 'Implemented input sanitization (XSS prevention), activity tracking logging, and cross-browser testing for retro components.'
     ]
 ];

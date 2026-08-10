@@ -50,7 +50,7 @@ $result = $conn->query($sql);
         <p class="empty-state">No items available right now.</p>
     <?php endif; ?>
 
-    <div class="dashboard-links">
+    <div class="dashboard-links" style="visibility:hidden">
         <a class="small-button" href="admin/admin_dashboard.php">Admin Dashboard</a>
         <a class="small-button" href="admin/admin_registration.php">Admin Registration</a>
         <a class="small-button" href="admin/admin_update.php">Admin Update</a>
