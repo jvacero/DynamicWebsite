@@ -25,6 +25,35 @@
 
 <header><?php
      include '../admin/admin_header.php';
+     $activitySql = "
+    SELECT * FROM (
+        SELECT
+            u.username AS username,
+            p.productname AS item_name,
+            c.quantity AS quantity,
+            'In Cart' AS activity_type,
+            '' AS reference_number,
+            c.added_at AS activity_date
+        FROM cart c
+        JOIN user u ON u.id = c.user_id
+        JOIN product p ON p.id = c.product_id
+
+        UNION ALL
+
+        SELECT
+            u.username AS username,
+            p.productname AS item_name,
+            oi.quantity AS quantity,
+            CONCAT('Bought (', oh.status, ')') AS activity_type,
+            oh.order_reference AS reference_number,
+            oh.created_at AS activity_date
+        FROM order_items oi
+        JOIN order_history oh ON oh.id = oi.order_id
+        JOIN user u ON u.id = oh.user_id
+        JOIN product p ON p.id = oi.product_id
+    ) AS activity_table
+    ORDER BY activity_date DESC
+";
     ?></header>
 
 <div>

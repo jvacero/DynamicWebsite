@@ -14,7 +14,7 @@ $loginError = $loginError ?? '';
 <body>
     <main class="login-page">
         <section class="login-container">
-            <h1>Admin Login</h1>
+            <h1>Login</h1>
 
             <?php if (!empty($loginError)): ?>
                 <div class="message error"><?php echo htmlspecialchars($loginError); ?></div>
